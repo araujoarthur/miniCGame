@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>
-#include "player.h"
+#include "entity.h"
 
 
 int LevelUpExperience(int lvl);
@@ -35,6 +35,29 @@ Entity* initEnemy(char* name, int level, float hp, float dmg, float defense)
 {
     return initEntity(name, level, hp, dmg, defense, false);
 }
+
+
+Entity* initEnemyBase(Entity* base, int scale)
+{   
+    int level;
+    float hp, dmg, defense;
+    if (scale > 0)
+    {
+        level = base->level * scale;
+        hp = base->hp * scale + base->level * scale;
+        dmg = scale * scale * base->dmg;
+        defense = 1.25 * scale * base->defense;
+    } else {
+        level = base->level;
+        hp = base->hp;
+        dmg = base->dmg;
+        defense = base->defense;
+    }
+    
+    return initEnemy(base->name, level, hp, dmg, defense);
+}
+
+
 
 void TakeDamage(Entity* target, int dmg)
 {

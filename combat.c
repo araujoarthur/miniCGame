@@ -2,7 +2,6 @@
 #include <math.h>
 #include "combat.h"
 
-
 Combat* initCombat(Entity* e1, Entity* e2)
 {
     Combat* combat = malloc(sizeof(Combat));
@@ -10,7 +9,7 @@ Combat* initCombat(Entity* e1, Entity* e2)
     // Chooses a seat to start.
     int starter = rand() % 2;
 
-    combat->seat0 = e1;
+    combat->seat0 = e1; // Always the player.
     combat->seat1 = e2;
     combat->currentAttacker = starter;
     combat->winner = NULL;

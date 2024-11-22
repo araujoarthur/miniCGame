@@ -1,5 +1,5 @@
 
-#include "player.h"
+#include "entity.h"
 #include "skill.h"
 
 #ifndef COMBAT_H  // Header Guard
@@ -13,6 +13,11 @@ typedef struct _combat {
     int currentAttacker;
     Entity* winner;
 } Combat;
+
+typedef struct _roundInfo {
+    float totalDamage;
+
+} RoundInfo;
 
 // Cria a estrutura de combate que será retornada na main. Sorteia as skills e define quem inicia.
 Combat* initCombat(Entity* e1, Entity* e2);
