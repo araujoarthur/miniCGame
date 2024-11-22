@@ -10,7 +10,7 @@ int DmgIncrease(int lvl);
 int DefenseIncrease(int lvl);
 
 
-Entity* initEntity(char* name, int level, float hp, float dmg, float defense, bool isPlayer)
+Entity* initEntity(char* name, const int level, const float hp, const float dmg, const float defense, const bool isPlayer)
 {
     Entity* ent = malloc(sizeof(Entity));
     ent->name = name;

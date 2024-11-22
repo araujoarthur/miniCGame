@@ -7,10 +7,10 @@
 # -o flag generates executable files. (gcc)
 
 CC = gcc 											# COMPILER
-CFLAGS = -Wall -O0 										# FLAGS (all Warnings)
+CFLAGS = -Wall 										# FLAGS (all Warnings)
 SRC = main.c entity.c skill.c combat.c drawings.c  	# Source Files
 OBJ = $(SRC:.c=.o)									# Object files. This SRC:.c=.o macro converts the .c files in SRC variable to .o files with the same name
-TARGET = gameO0							# Target Name
+TARGET = game 					# Target Name
 
 
 #%.o: %.c 
